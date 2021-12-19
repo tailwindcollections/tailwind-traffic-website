@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/GoogleSans-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/GoogleSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/GoogleSans-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/GoogleSans-Bold.woff") format("woff");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
