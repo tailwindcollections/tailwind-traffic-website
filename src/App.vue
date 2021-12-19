@@ -11,6 +11,7 @@ import ChipIcon from "./icons/chip.svg";
 import ChartIcon from "./icons/chart.svg";
 
 const menu = ["Rankings", "Data", "Solution", "Pricing", "Resources"];
+
 const features = [
   {
     icon: SpeakerPhoneIcon,
@@ -34,29 +35,35 @@ const features = [
 <template>
   <div class="overflow-hidden w-full min-h-screen font-sans bg-gray-900">
     <div class="relative">
-      <img class="absolute opacity-70" src="/img/bg-1.svg" alt="" />
+      <img class="absolute opacity-70" :src="'/img/bg-1.svg'" alt="" />
       <div class="relative py-10 px-8 mx-auto max-w-7xl">
         <nav class="flex justify-between items-center">
           <a href="#" class="text-2xl font-semibold text-white">Liondo</a>
-          <ul class="flex gap-x-16 items-center tracking-wider text-gray-300">
-            <li v-for="item in menu" class="transition hover:text-white">
-              <a href="#"> {{ item }} </a>
+          <ul
+            class="hidden md:items-center md:tracking-wider md:text-gray-300 md:gap-8 lg:gap-x-16 md:flex"
+          >
+            <li v-for="item in menu">
+              <a href="#" class="transition hover:text-white">
+                {{ item }}
+              </a>
             </li>
           </ul>
           <button
-            class="py-3 px-6 font-medium tracking-wider leading-5 text-white rounded-md border-2 border-gray-800 transition hover:text-gray-900 hover:bg-teal-300"
+            class="hidden py-3 px-6 font-medium tracking-wider leading-5 text-white rounded-md border-2 border-gray-800 transition md:inline-block hover:bg-teal-300 hover:text-gray-900 hover:shadow-lg"
           >
             Get Started
           </button>
         </nav>
       </div>
       <div class="relative py-10 px-8 mx-auto max-w-7xl">
-        <div class="flex">
-          <div class="w-1/2">
-            <h1 class="pt-10 text-7xl font-bold leading-tight text-white">
+        <div class="flex flex-col gap-y-12 md:flex-row">
+          <div class="md:w-1/2">
+            <h1
+              class="relative z-10 pt-10 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl"
+            >
               Tracking User
               <span
-                class="relative z-10 after:w-80 after:h-5 after:bg-gradient-to-l after:from-teal-300 after:absolute after:left-0 after:bottom-2 after:-z-10"
+                class="relative after:bottom-2 after:left-0 after:bg-gradient-to-l after:from-teal-300 after:absolute after:w-80 after:h-5 after:-z-10"
               >
                 Movements
               </span>
@@ -80,20 +87,30 @@ const features = [
               </button>
             </div>
           </div>
-          <div class="flex justify-center items-center pl-24 w-1/2">
-            <img src="/img/hero.png" alt="" class="max-w-xl drop-shadow-2xl" />
+          <div class="flex items-center md:justify-center md:pl-24 md:w-1/2">
+            <img
+              class="max-w-md lg:max-w-xl drop-shadow-2xl"
+              src="/img/hero.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
     </div>
     <div class="relative">
-      <img class="absolute opacity-70" src="/img/bg-2.svg" alt="" />
+      <img class="absolute opacity-70" :src="'/img/bg-2.svg'" alt="" />
       <div class="relative py-16 px-8 mx-auto max-w-7xl">
-        <div class="flex justify-between items-center">
-          <span class="font-semibold tracking-wider text-white uppercase">
+        <div
+          class="flex flex-col md:flex-row md:justify-between md:items-center md:gap-x-10"
+        >
+          <span
+            class="font-semibold tracking-wider text-white uppercase whitespace-nowrap"
+          >
             Trusted by global brands
           </span>
-          <div class="flex gap-x-14 items-center">
+          <div
+            class="flex flex-wrap gap-y-4 gap-x-14 items-center pt-6 -mx-2 lg:flex-nowrap md:pt-0 md:mx-0"
+          >
             <GoogleLogo
               class="w-auto h-16 text-gray-400 transition cursor-pointer fill-current hover:text-white"
             />
@@ -113,28 +130,30 @@ const features = [
         </div>
       </div>
       <div class="relative py-16 px-8 mx-auto max-w-7xl">
-        <div class="flex gap-x-8 justify-between">
-          <div class="w-1/2">
+        <div class="flex flex-col gap-x-8 justify-between md:flex-row">
+          <div class="md:w-1/2">
             <h2 class="text-5xl font-bold leading-tight text-white">
               Must-Have to Win Your Online Market
             </h2>
           </div>
-          <div class="w-1/2">
-            <p class="pt-6 text-xl leading-relaxed text-left text-gray-300">
+          <div class="md:w-1/2">
+            <p class="pt-6 text-xl leading-relaxed text-gray-300">
               Found something that works for you? Request a quote from our site or call an
               agent and we'll get back to you as soon as possible.
             </p>
             <button
-              class="py-4 px-8 mt-8 font-medium tracking-wider bg-teal-200 rounded-lg transition hover:bg-teal-300"
+              class="py-4 px-8 mt-8 font-medium tracking-wide bg-teal-200 rounded-lg transition hover:bg-teal-300"
             >
               Get Started
             </button>
           </div>
         </div>
-        <div class="flex gap-x-8 items-start py-16">
+        <div
+          class="grid grid-cols-2 gap-4 items-start py-16 w-full md:grid-cols-4 md:gap-x-8"
+        >
           <div
             v-for="feature in features"
-            class="flex overflow-hidden relative flex-col items-start p-6 w-1/4 bg-gray-800 rounded-lg transition duration-300 cursor-pointer group hover:bg-white"
+            class="flex overflow-hidden relative flex-col items-start p-6 bg-gray-800 rounded-lg transition duration-300 cursor-pointer group hover:bg-white"
           >
             <span
               class="absolute top-0 right-0 w-24 h-24 bg-teal-200 transition-transform ease-out rotate-45 translate-x-20 -translate-y-20 group-hover:translate-x-14 group-hover:-translate-y-14"
